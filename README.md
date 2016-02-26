@@ -1,4 +1,4 @@
-# investmanager
+# tdd-lab 
 
-Aplicação para controle de investimentos
+Aplicação para laboratorio de TDD.
 
