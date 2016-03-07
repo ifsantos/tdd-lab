@@ -29,10 +29,10 @@ public class Calculadora {
 		if (a == null){
 			return b;
 		}
-		if (isMax(a) || isMax(b))
+		if (a < 0 && isMax(b))
 			throw new ExcecaoAritmetica("problema na soma");
 		
-		if (isMin(a) || isMin(b))
+		if (isMin(a) && b>0)
 			throw new ExcecaoAritmetica("problema na soma");
 		
 		return a-b;

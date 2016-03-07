@@ -44,11 +44,11 @@ public class CalculadoraTest {
 	}
 	@Test
 	public void testSomarFracaoTendeAZero() {
-		Double soma = c.somar(6.0, 0.000001);
-		assertTrue("soma com Fracao deve ser diferente de soma com zero", 6.0 != soma.doubleValue());
+		Double soma = c.somar(6.0, 0.00000000001);
+		assertEquals("soma com Fracao deve ser diferente de soma com zero", 6.00000000001, soma.doubleValue(), 0.0);
 	}
 	@Test(expected=ExcecaoAritmetica.class)
-	public void testSomarMaxValue() {
+	public void mustExceptionWhenSomarMoreThanMax() {
 		Double ret = c.somar(Double.MAX_VALUE, 1.0);
 		System.out.println(ret);
 	}
@@ -78,6 +78,10 @@ public class CalculadoraTest {
 	public void testSubtrairMinValue() {
 		c.subtrair(Double.MIN_VALUE, 1d);
 	}
+	@Test(expected=ExcecaoAritmetica.class)
+	public void mustExceptionWhenSubMaxFromNegative() {
+		c.subtrair(-1.0, Double.MAX_VALUE);
+	}
 
 	@Test
 	public void testMultiplicarOK() {
@@ -106,6 +110,7 @@ public class CalculadoraTest {
 	}
 	@Test(expected=ExcecaoAritmetica.class)
 	public void testMultiplicarAlgoPorMaxValue() {
+		System.out.println();
 		c.multiplicar(2.1, Double.MAX_VALUE);
 	}
 
