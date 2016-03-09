@@ -1,12 +1,12 @@
-package com.blogspot.ifsantos.calculadora.test;
+package com.tddlab.calculadora.test;
 
 import static org.junit.Assert.*;
 
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import com.blogspot.ifsantos.calculadora.Calculadora;
-import com.blogspot.ifsantos.calculadora.ExcecaoAritmetica;
+import com.tddlab.calculadora.Calculadora;
+import com.tddlab.calculadora.ExcecaoAritmetica;
 
 public class CalculadoraTest {
 
@@ -110,7 +110,6 @@ public class CalculadoraTest {
 	}
 	@Test(expected=ExcecaoAritmetica.class)
 	public void testMultiplicarAlgoPorMaxValue() {
-		System.out.println();
 		c.multiplicar(2.1, Double.MAX_VALUE);
 	}
 
