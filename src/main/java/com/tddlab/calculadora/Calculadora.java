@@ -1,4 +1,4 @@
-package com.blogspot.ifsantos.calculadora;
+package com.tddlab.calculadora;
 
 public class Calculadora {
 
